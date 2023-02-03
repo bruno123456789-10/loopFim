@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Atividade 01 - 30, Jan. </h1>
+    <div id="texto"></div>
+    <script>
+        let escolha = 1
+        let qualidade = ""
+        let texto = ""
+        let quantidade = 0
+        let aprovadas = 0
+        let reprovadas = 0
+        let qnt;
+
+        while (escolha == 1){
+        escolha = (prompt("Você quer adicionar uma nova peça? 1- Sim \n 2- Não"))
+        if (escolha == 1){
+            qualidade = (prompt("A peça está aprovada? 1- Sim \n 2- Não")) 
+           quantidade = (prompt("Digite o número da peça"))
+            qualidade = (prompt("A peça está aprovada? 1- Sim \n 2- Não")) 
+            if (qualidade == 1){
+                quantidade = (prompt("Digite o número da peça"))
+                texto = texto + (quantidade) + ". " + "Aprovada" + "</br>"
+                document.getElementById("texto").innerHTML=texto
+                aprovadas++
+            } else{
+                
+                texto = texto + (quantidade) + ". " + "Reprovada" + "</br>"
+                document.getElementById("texto").innerHTML=texto
+                reprovadas++
+            }
+           
+
+        }
+
+        }
+
+        texto = texto + "São " + aprovadas + " peças aprovadas e " + reprovadas + " reprovadas."
+        document.getElementById("texto").innerHTML=texto
+    </script>
+</body>
+</html>
