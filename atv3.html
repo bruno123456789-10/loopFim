@@ -9,7 +9,7 @@
 <body>
     <p>A idade media dos candidatos é de <span id="media"></span> anos.</p>
     <p>Há <span id="total-candidatos"></span> candidatos.</p>
-    <h3>Candidatos pré-aprovados:</h3>
+    <h3><span id="aprov"></span> candidatos pré-aprovados:</h3>
     <p><span id="texto"></span></p>
 
     <script>
@@ -22,9 +22,10 @@
         let contMedia = 0;
         let contCand = 0;
         let texto = "";
+        let aprov = 0;
 
         while (adicionar == 1) {
-            numCand = prompt("Qual o número do candidato?");
+            numCand = Number(prompt("Qual o número do candidato?"));
             idade = Number(prompt("Qual a idade do candidato nº" + numCand + "?"));
             sexo = prompt("Qual o sexo do candidato nº" + numCand + "?");
             expProf = prompt("O candidato tem experiencia na área? \n 1- Sim \n 2- Não");
@@ -41,6 +42,7 @@
             if (idade >= 18 && expProf == 1) {
                 texto = "Numero do candidato: " + numCand + ".</br> Idade: " + idade + ".</br> Sexo: " + sexo + ".</br> Experiencia: sim." +"</br></br>";
                 document.getElementById("texto").innerHTML += texto;
+                aprov++;
             }
             
             adicionar = prompt("Quer adicionar um candidato? \n 1- Sim \n 2- Não");
@@ -48,6 +50,7 @@
 
         media = (media/contMedia);
 
+        document.getElementById("aprov").innerHTML = aprov;
         document.getElementById("media").innerHTML = media;
         document.getElementById("total-candidatos").innerHTML = contCand;
     </script>
